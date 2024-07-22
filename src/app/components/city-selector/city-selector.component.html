@@ -1,0 +1,14 @@
+<p>Írd be a város nevét:</p>
+
+<form [formGroup]="formGroup">
+    <p-autoComplete 
+        formControlName="cityInput"
+        [suggestions]="filteredCities" 
+        field="name">
+        <ng-template let-city pTemplate="item" >
+            <div class="flex align-items-center gap-2">                
+                <div (click)="chooseCity(city)" (keydown.enter)="chooseCity(city)">{{ city.name }}, {{ city.country }}</div>
+            </div>
+        </ng-template>
+    </p-autoComplete>
+</form>

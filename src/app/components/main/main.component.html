@@ -1,0 +1,16 @@
+@if(selectedCity){
+    <div class="container">
+        <div class="current-div">
+            <span (click)="show()">{{selectedCity.name}}</span>
+            <p class="temperature">
+                {{weatherData?.current?.temperature_2m}} {{weatherData?.current_units?.temperature_2m}}            
+            </p>
+            <app-weather-icon [wmo]="weatherData?.current?.weather_code"></app-weather-icon>&nbsp;
+            <app-weather-status [wmo]="weatherData?.current?.weather_code"></app-weather-status> 
+        </div>
+        <div class="forecast-div">
+            <app-weather-weekly-forecast [weatherData]="weatherData"></app-weather-weekly-forecast>
+            <app-weather-chart [weatherData]="weatherData"></app-weather-chart>        
+        </div>
+    </div>
+}
