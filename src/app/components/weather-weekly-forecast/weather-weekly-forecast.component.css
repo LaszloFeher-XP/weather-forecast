@@ -1,0 +1,16 @@
+table{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+td:nth-child(2),
+td:nth-child(3){
+    width: 3rem;
+    max-width: 4rem;
+    text-align: right;
+}
+
+td:nth-child(4){
+    width: 45%;
+    text-align: right;
+}
