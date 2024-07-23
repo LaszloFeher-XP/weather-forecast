@@ -29,7 +29,6 @@ export class CitySelectorComponent {
   });
 
   filteredCities: CityModel[] = [];
-  selectedCountry: { name?: string; code?: number } = {};
 
   ngOnInit(): void {
     this.formGroup.controls['cityInput'].valueChanges
@@ -47,12 +46,15 @@ export class CitySelectorComponent {
       });
   }
 
-  filterCountry(event: any) {
-    console.log(event);
-  }
-
   chooseCity(city: CityModel) {
     sessionStorage.setItem('city', JSON.stringify(city));
     this.ref.close();
+  }
+
+  submitCity(): void {
+    const city: string | CityModel = this.formGroup.controls['cityInput'].value;
+    if (city && typeof city === 'object') {
+      this.chooseCity(city);
+    }
   }
 }

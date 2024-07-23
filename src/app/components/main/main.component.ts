@@ -51,7 +51,7 @@ export class MainComponent implements OnInit {
   show() {
     this.ref = this.dialogService.open(CitySelectorComponent, {
       header: 'Válassz egy várost',
-      width: '50vw',
+      width: '600px',
       height: '400px',
       modal: true,
       breakpoints: {
